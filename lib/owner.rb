@@ -39,7 +39,6 @@ class Owner
   def dogs 
     @dogs = Dog.all.collect do |dog|
       if dog.owner == self 
-        @dogs << dog 
       end
     end
     @dogs
