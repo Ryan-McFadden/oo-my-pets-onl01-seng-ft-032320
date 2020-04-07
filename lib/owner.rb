@@ -74,6 +74,8 @@ class Owner
     Cat.all.each do |cat|
       if cat.owner == self 
         cat.mood ="happy"
+        
+    
   end
   
   def list_pets
