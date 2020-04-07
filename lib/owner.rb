@@ -8,8 +8,6 @@ class Owner
     @name = name
     @species = "human"
     @@all << self
-    @dogs = []
-    @cats = []
   end
   
   def say_species
@@ -29,6 +27,7 @@ class Owner
   end
   
   def cats 
+    @cats = []
     Cat.all.each do |cat|
       if cat.owner == self
         @cats << cat
@@ -38,6 +37,7 @@ class Owner
   end
   
   def dogs 
+    @dogs = []
     Dog.all.each do |dog|
       if dog.owner == self 
         @dogs << dog 
@@ -47,13 +47,11 @@ class Owner
   end
   
   def buy_cat(name)
-    new_cat = Cat.new(name, self)
-    @cats << new_cat
+    Cat.new(name, self)
   end
   
   def buy_dog(name)
-    new_dog = Dog.new(name, self)
-    @dogs << new_dog
+    Dog.new(name, self)
   end
   
   def walk_dogs
