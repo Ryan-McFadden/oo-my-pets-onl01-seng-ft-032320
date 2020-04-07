@@ -87,6 +87,16 @@ class Owner
   end
   
   def list_pets
+    @dogs = []
+    @cats = []
+    
+    Cat.all.each do |cat|
+      if cat.owner == self
+        @cats << cat
+      end
+    end
+    
+    Dog.all.each |dog|
     
     "I have #{@dogs.count} dog(s), and #{@cats.count} cat(s)."
   end
