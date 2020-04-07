@@ -96,7 +96,11 @@ class Owner
       end
     end
     
-    Dog.all.each |dog|
+    Dog.all.each do |dog|
+      if dog.owner == self 
+        @dogs << dog
+      end
+    end
     
     "I have #{@dogs.count} dog(s), and #{@cats.count} cat(s)."
   end
