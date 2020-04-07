@@ -37,8 +37,10 @@ class Owner
   end
   
   def dogs 
-    @dogs = Dog.all.collect do |dog|
+    @dogs = []
+    Dog.all.each do |dog|
       if dog.owner == self 
+        @dogs << dog 
       end
     end
     @dogs
