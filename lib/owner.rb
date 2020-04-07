@@ -29,7 +29,7 @@ class Owner
   end
   
   def cats 
-    Cats.all.each do |cat|
+    Cat.all.each do |cat|
       if cat.owner == self
         @cats << cat
       end
@@ -38,7 +38,7 @@ class Owner
   end
   
   def dogs 
-    Dogs.all.each do |dog|
+    Dog.all.each do |dog|
       if dog.owner == self 
         @dogs << dog 
       end
