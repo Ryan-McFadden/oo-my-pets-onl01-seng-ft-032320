@@ -81,7 +81,7 @@ class Owner
     Dog.all.each do |dog|
       if dog.owner == self 
         dog.mood = "nervous"
-        dog.owner.clear
+        dog.owner = nil
       end
     end
   end
